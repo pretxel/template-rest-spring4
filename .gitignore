@@ -1,0 +1,12 @@
+# GIT
+!.gitignore
+!.gitkeep
+
+# Linux
+*~
+
+*.DS_Store
+.DS_Store
+
+
+
