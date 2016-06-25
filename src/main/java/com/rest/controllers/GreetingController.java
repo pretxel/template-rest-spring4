@@ -2,6 +2,8 @@ package com.rest.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,8 @@ import com.rest.services.GreetingService;
 @RequestMapping("/api")
 public class GreetingController {
 
-    
+	private static final Logger logger = 
+			LoggerFactory.getLogger(GreetingController.class);
     private final AtomicLong counter = new AtomicLong();
     
     @Autowired
@@ -24,6 +27,7 @@ public class GreetingController {
 
     @RequestMapping(method=RequestMethod.GET, value="/")
     public String hello() {
+    	logger.debug("getWelcome is executed!");
     	return "API";
     }
     
